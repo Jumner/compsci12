@@ -11,8 +11,36 @@
 h1 {
 	font-family: 'Josefin Sans';
 }
-*.code {
+
+p.code {
+	color: white;
 	font-family: 'Source Code Pro';
+}
+p.code > span::after {
+	/* add newline to span */
+	content: '\A';
+	white-space: pre;
+}
+p.code > span {
+	counter-increment: line;
+}
+p.code > span::before {
+	content: counter(line) '. ';
+	color: #666;
+	display: inline-block;
+	width: 2rem;
+	padding-left: auto;
+	margin-left: auto;
+	text-align: left;
+}
+div.code-wrapper {
+	background-color: black;
+	padding: 1rem;
+	border-radius: 10px;
+}
+
+span.center {
+	text-align: center;
 }
 a {
 	text-decoration: none;
@@ -20,10 +48,14 @@ a {
 div.page {
 	width: 100%;
 	height: 100vh;
+	position: relative;
 }
 h1.main-header {
 	text-align: center;
 	font-size: 3.5rem;
+}
+p.main-text {
+	font-size: 2rem;
 }
 h1.main-header::after {
 	content: '';
@@ -49,10 +81,11 @@ div#nav {
 	position: fixed;
 	width: 100%;
 	height: min(max(5vh, 30px), 50px);
+	z-index: 10;
 }
 
 div#nav > div.nav-button {
-	width: calc(100vw / 7);
+	width: 100vw; /* This doesn't apply but is still needed */
 	display: table-cell;
 }
 
@@ -61,7 +94,7 @@ div.nav-button > a {
 	justify-content: center;
 	display: flex;
 	height: 100%;
-	width: calc(100vw / 7);
+	width: calc(100% / 8);
 	position: absolute;
 	color: white;
 }
@@ -86,7 +119,47 @@ div#main h1.main-header {
 	margin-top: 3vh;
 }
 
-div#main p {
-	font-size: 2rem;
+div#main p.main-text {
 	margin-top: 5%;
 }
+
+/* Comments page */
+
+div#comment > div.wrapper {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 10vh;
+	width: max(30%, 45rem);
+}
+
+div#comment h1.main-header {
+	margin-top: 3vh;
+}
+
+div#comment p.main-text {
+	margin-top: 5%;
+}
+
+div#comment > div.code-container {
+	display: grid;
+	position: absolute;
+	bottom: 15vh;
+	left: 50%;
+	width: max(30%, 45rem);
+	transform: translateX(-50%);
+}
+
+div#comment div.code-wrapper {
+	grid-row: 1;
+	margin: 10px;
+}
+
+/* <div class="code-container">
+				<div class="code-wrapper">
+					<p class="code">test</p>
+				</div>
+				<div class="code-wrapper">
+					<p class="code">test</p>
+				</div>
+			</div> */
