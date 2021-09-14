@@ -1,161 +1,164 @@
 /* import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Josefin+Sans&family=Source+Code+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Josefin+Sans&family=Source+Code+Pro&display=swap");
 /* Cabin: main text, Josefin Sans: headers, Source Code Pro: code 😛 */
 * {
-	margin: 0;
-	padding: 0;
-	font-family: 'Cabin';
-	transition: all 0.5s ease-in-out;
-	scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: "Cabin";
+  transition: all 0.5s ease-in-out;
+  scroll-behavior: smooth;
+}
+html {
+  font-size: 1.6vh;
 }
 h1 {
-	font-family: 'Josefin Sans';
+  font-family: "Josefin Sans";
 }
 
 p.code {
-	tab-size: 2em;
-	color: white;
-	font-family: 'Source Code Pro';
+  tab-size: 2em;
+  color: white;
+  font-family: "Source Code Pro";
 }
 p.code > span::after {
-	/* add newline to span */
-	content: '\A';
-	white-space: pre;
+  /* add newline to span */
+  content: "\A";
+  white-space: pre;
 }
 p.code > span {
-	counter-increment: line;
+  counter-increment: line;
 }
 p.code .comment {
-	color: #777;
+  color: #777;
 }
 p.code > span::before {
-	content: counter(line) '. ';
-	color: #666;
-	display: inline-block;
-	width: 2rem;
-	text-align: left;
+  content: counter(line) ". ";
+  color: #666;
+  display: inline-block;
+  width: 2rem;
+  text-align: left;
 }
 div.code-wrapper {
-	background-color: black;
-	padding: 1rem;
-	border-radius: 10px;
+  background-color: black;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 span.center {
-	text-align: center;
+  text-align: center;
 }
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 .link {
-	text-decoration: underline;
-	color: #666;
+  text-decoration: underline;
+  color: #666;
 }
 .link:hover {
-	text-decoration: underline wavy;
+  text-decoration: underline wavy;
 }
 .link.red:hover {
-	color: crimson;
+  color: crimson;
 }
 
 .link.green:hover {
-	color: darkcyan;
+  color: darkcyan;
 }
 .page {
-	width: 100%;
-	height: 100vh;
-	position: relative;
+  width: 100%;
+  height: 100vh;
+  position: relative;
 }
 h1.main-header {
-	margin-top: 3vh;
-	text-align: center;
-	font-size: 3.5rem;
+  margin-top: 3vh;
+  text-align: center;
+  font-size: 3.5rem;
 }
 p.main-text {
-	margin-top: 5%;
-	font-size: 2rem;
+  margin-top: 5%;
+  font-size: 2rem;
 }
 div.main-wrapper {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	top: 5vh;
-	width: max(30%, 45rem);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5vh;
+  width: max(30%, 45rem);
 }
 h1.main-header::after {
-	/* Page header underline */
-	/* Makes sure pseudo elements is displayed */
-	content: '';
-	display: block;
-	/* Set bar size */
-	position: absolute;
-	width: 60px;
-	height: 5px;
-	/* Position bar */
-	left: 50%;
-	transform: translateX(-50%);
-	/* Style bar */
-	transition: width 0.5s ease-in-out; /* Add transition to pseudo elements because * doesnt affect them */
-	background-color: black;
+  /* Page header underline */
+  /* Makes sure pseudo elements is displayed */
+  content: "";
+  display: block;
+  /* Set bar size */
+  position: absolute;
+  width: 60px;
+  height: 5px;
+  /* Position bar */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Style bar */
+  transition: width 0.5s ease-in-out; /* Add transition to pseudo elements because * doesnt affect them */
+  background-color: black;
 }
 
 h1.main-header:hover::after {
-	width: 90%;
+  width: 90%;
 }
 
 div.code-container {
-	display: grid;
-	position: absolute;
-	bottom: 5vh;
-	left: 50%;
-	transform: translateX(-50%);
-	width: max(30%, 45rem);
+  display: grid;
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max(30%, 45rem);
 }
 
 div.code-wrapper {
-	grid-row: 1;
-	margin: 10px;
+  grid-row: 1;
+  margin: 10px;
 }
 
 /* Nav */
 
 div#nav {
-	background-color: black;
-	color: white;
-	position: fixed;
-	width: 100%;
-	height: min(max(5vh, 30px), 50px);
-	z-index: 10;
+  background-color: black;
+  color: white;
+  position: fixed;
+  width: 100%;
+  height: min(max(5vh, 30px), 50px);
+  z-index: 10;
 }
 
 div#nav > div.nav-button {
-	width: 100vw; /* This doesn't apply but is still needed */
-	display: table-cell;
+  width: 100vw; /* This doesn't apply but is still needed */
+  display: table-cell;
 }
 
 div.nav-button > a {
-	align-items: center;
-	justify-content: center;
-	display: flex;
-	height: 100%;
-	width: calc(100% / 8);
-	position: absolute;
-	color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100%;
+  width: calc(100% / 8);
+  position: absolute;
+  color: white;
 }
 
 div.nav-button > a:hover {
-	text-decoration: underline;
-	box-shadow: 10px;
-	box-shadow: inset 0 calc(50px) 0 0 white;
-	color: black;
+  text-decoration: underline;
+  box-shadow: 10px;
+  box-shadow: inset 0 calc(50px) 0 0 white;
+  color: black;
 }
 
 /* Main page */
 
 div#main > div.main-wrapper {
-	top: 50%;
-	width: max(30%, 37rem);
-	transform: translate(-50%, -50%);
+  top: 50%;
+  width: max(30%, 37rem);
+  transform: translate(-50%, -50%);
 }
 
 /* Comments page (Just kidding its all css 🥳) */
@@ -163,33 +166,33 @@ div#main > div.main-wrapper {
 /* Images */
 
 div#table > div.main-wrapper {
-	top: 10vh;
+  top: 10vh;
 }
 
 div#table > div.content {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	width: max(30%, 45rem);
-	bottom: 10vh;
-	display: grid;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max(30%, 45rem);
+  bottom: 10vh;
+  display: grid;
 }
 
 div#table > div.content > * {
-	grid-row: 1;
+  grid-row: 1;
 }
 
 div#table > div.content > img#html5logo {
-	height: 30vh;
-	display: block;
-	margin-left: auto;
+  height: 30vh;
+  display: block;
+  margin-left: auto;
 }
 
 div#table > div.content th:not(.no-border),
 div#table > div.content td {
-	border: 0.5rem solid white;
-	text-align: center;
-	background-color: #ddd;
+  border: 0.5rem solid white;
+  text-align: center;
+  background-color: #ddd;
 }
 
 /* Stylesheets (Wait, its all classes? Again? Yay 🎊) */
@@ -199,39 +202,39 @@ div#table > div.content td {
 /* Hyperlinks */
 
 div#hyperlinks > div.main-wrapper {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	top: 5vh;
-	width: max(30%, 45rem);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5vh;
+  width: max(30%, 45rem);
 }
 
 div#hyperlinks > div.content {
-	display: grid;
-	position: absolute;
-	bottom: 5vh;
-	left: 50%;
-	transform: translateX(-50%);
-	width: max(30%, 45rem);
+  display: grid;
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max(30%, 45rem);
 }
 
 div#hyperlinks .link {
-	font-size: 1.5rem;
-	text-align: center;
-	grid-row: 2;
+  font-size: 1.5rem;
+  text-align: center;
+  grid-row: 2;
 }
 
 div#hyperlinks > div.content > h1 {
-	text-align: center;
-	grid-column: 1 / span 5;
-	margin: 1rem;
+  text-align: center;
+  grid-column: 1 / span 5;
+  margin: 1rem;
 }
 
 div#hyperlinks div.content .link:first-of-type,
 div#hyperlinks div.content .link.third:nth-of-type(3),
 div#hyperlinks div.content .link.active:active,
 div#hyperlinks div.content .link.visited:visited {
-	color: red;
+  color: red;
 }
 
 /* Presentation (You know what, I understand now 🙃)*/
