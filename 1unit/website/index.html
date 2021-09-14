@@ -1,250 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link href="style.css" rel="stylesheet" type="text/css" />
-		<script src="main.js"></script>
-		<title>jeff</title>
-	</head>
-	<body>
-		<div id="nav">
-			<div class="nav-button"><a href="#main">Home</a></div>
-			<div class="nav-button"><a href="#comment">Comments</a></div>
-			<div class="nav-button"><a href="#table">Images</a></div>
-			<div class="nav-button"><a href="#styles">Stylesheets</a></div>
-			<div class="nav-button"><a href="#pseudo">Pseudo's</a></div>
-			<div class="nav-button"><a href="#hyperlinks">Hyperlinks</a></div>
-			<div class="nav-button"><a href="#presentation">Presentation</a></div>
-			<div class="nav-button"><a href="#form">Form</a></div>
-		</div>
-		<div id="main" class="page">
-			<div class="main-wrapper">
-				<h1 class="main-header">How to do this project in 3 easy steps</h1>
-				<p class="main-text">
-					If you just follow these simple instructions, it will all turn out
-					great!
-				</p>
-			</div>
-		</div>
-		<div id="comment" class="page">
-			<div class="main-wrapper">
-				<h1 class="main-header">Commenting your code is super important!</h1>
-				<p class="main-text">
-					Code in any language can be confusing and hard to read. This is why
-					you must comment it. You'll think that you'll remember what your code
-					does, but you won't. Plus, others can't remember for you.<br />Just
-					look at the difference!
-				</p>
-			</div>
-			<div class="code-container">
-				<div class="code-wrapper">
-					<p class="code css">
-						<span>h1.main-header::after { /* Page header underline */</span>
-						<span>/* Makes sure pseudo elements is displayed */</span>
-						<span>content: '';</span>
-						<span>display: block;</span>
-						<span>/* Set bar size */</span>
-						<span>position: absolute;</span>
-						<span>width: 60px;</span>
-						<span>height: 5px;</span>
-						<span>/* Position bar */</span>
-						<span>left: 50%;</span>
-						<span>transform: translateX(-50%);</span>
-						<span>/* Style bar */</span>
-						<span>
-							transition: width 0.5s; /* Add transition to pseudo elements
-							because * doesnt affect them */
-						</span>
-						<span>background-color: black;</span>
-						<span>}</span>
-					</p>
-				</div>
-				<div class="code-wrapper">
-					<p class="code css">
-						<span>h1.main-header::after {</span>
-						<span>content: '';</span>
-						<span>display: block;</span>
-						<span>position: absolute;</span>
-						<span>width: 60px;</span>
-						<span>height: 5px;</span>
-						<span>left: 50%;</span>
-						<span>transform: translateX(-50%);</span>
-						<span>transition: width 0.5s; </span>
-						<span>background-color: black;</span>
-						<span>}</span>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div id="table" class="page">
-			<div class="main-wrapper">
-				<h1 class="main-header">Use images and tables</h1>
-				<p class="main-text">
-					Images and tables can add a lot to a website. They are a great way to
-					convey a message in a simple way.
-				</p>
-			</div>
-			<div class="content">
-				<table>
-					<tr>
-						<th class="no-border"></th>
-						<th>0</th>
-						<th>1</th>
-					</tr>
-					<tr>
-						<th>0</th>
-						<td>0</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<th>1</th>
-						<td>1</td>
-						<td>0</td>
-					</tr>
-				</table>
-				<img id="html5logo" src="img/html.svg" alt="img no load ;(" />
-			</div>
-		</div>
-		<div id="styles" class="page">
-			<div class="main-wrapper">
-				<h1 class="main-header">Use more classes and id's</h1>
-				<p class="main-text">
-					Classes allow you to affect multiple elements at once. Instead of
-					applying a style to many elements, just apply a class to them. Id's
-					make your
-					<a
-						class="link red"
-						href="https://www.w3schools.com/cssref/css_selectors.asp"
-						target="_blank"
-						>selectors</a
-					>
-					very simple. Instead of having a long
-					<a
-						class="link green"
-						href="https://www.w3schools.com/cssref/css_selectors.asp"
-						target="_blank"
-						>selector</a
-					>, you can just have it find the tag with that id. Just make sure you
-					leave a comment so you remember what it is.
-				</p>
-			</div>
-			<div class="code-container">
-				<div class="code-wrapper">
-					<p class="code css">
-						<span>/* This is clunky and hard to read */</span>
-						<span>div:nth-child(4) > div > h1 { /* Style header */</span>
-						<span> /* Set colour and margin */</span>
-						<span> color: black;</span>
-						<span> margin: 3vh;</span>
-						<span>}</span>
-						<span>div:nth-child(4) > div > p { /* Style text */</span>
-						<span> /* Set colour and margin */</span>
-						<span> color: black;</span>
-						<span> margin: 3vh;</span>
-						<span>}</span>
-					</p>
-				</div>
-				<div class="code-wrapper">
-					<p class="code css">
-						<span>/* This is clear and concise */</span>
-						<span>div#style h1.main-header,</span>
-						<span> div#style p.main-text { /* Style header and text */</span>
-						<span> /* Set colour and margin */</span>
-						<span> color: black;</span>
-						<span> margin: 3vh;</span>
-						<span>}</span>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div id="pseudo" class="page">
-			<div class="main-wrapper">
-				<h1 class="main-header">Complex selectors and Pseudo elements</h1>
-				<p class="main-text">
-					To keep your css file(s) clean, it is really important that you use a
-					variety of techniques to consolidate your code. This could be as
-					simple as having an underline class instead of adding a bunch of
-					underlines. Pseudo elements are elements that appear, but are not
-					real. An example of this is the ::before pseudo element for the line
-					numbers below.
-				</p>
-			</div>
-			<div class="code-container">
-				<div class="code-wrapper">
-					<p class="code css">
-						<span>/* These rules are very similar */</span>
-						<span>div#table th:not(.no-border) {/* Table headers */</span>
-						<span> /* Set fg and bg colours */</span>
-						<span> border: 0.5rem solid white;</span>
-						<span> background-color: #ddd;</span>
-						<span>}</span>
-						<span>div#table td { /* Table data */</span>
-						<span> /* Set fg and bg colours */</span>
-						<span> border: 0.5rem solid white;</span>
-						<span> background-color: #ddd;</span>
-						<span> /* center text (th are auto centered) */</span>
-						<span> text-align: center;</span>
-						<span>}</span>
-					</p>
-				</div>
-				<div class="code-wrapper">
-					<p class="code css">
-						<span>/* This is much cleaner */</span>
-						<span>div#table th:not(.no-border),</span>
-						<span>div#table td { /* Table headers and data */</span>
-						<span> /* Set fg and bg colours */</span>
-						<span> border: 0.5rem solid white;</span>
-						<span> background-color: #ddd;</span>
-						<span> /* center text */</span>
-						<span> text-align: center;</span>
-						<span>}</span>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div id="hyperlinks" class="page">
-			<div class="main-wrapper">
-				<h1 class="main-header">Hyperlinks are awesome!</h1>
-				<p class="main-text">
-					You have to remember, that these are websites! If someone gets
-					confused or lost, hyperlinks are a great way to send them in a
-					direction of clarification. All elements, and links especially, can
-					have effects when they are
-					<a
-						class="link green"
-						href="https://www.w3schools.com/css/css_pseudo_classes.asp"
-						target="_blank"
-						>hovered, clicked, selected, etc...</a
-					>. And best of all, they can be chained together!
-				</p>
-			</div>
-			<div class="content">
-				<h1>Links turn red</h1>
-				<a href="/" target="_blank" class="link first">First child</a>
-				<a href="/" target="_blank" class="link red">Hover</a>
-				<a href="/" target="_blank" class="link third">Third child</a>
-				<a href="/" target="_blank" class="link active">Active</a>
-				<a href="/" target="_blank" class="link visited">Visited</a>
-			</div>
-		</div>
-		<div id="presentation" class="page">
-			<div class="main-wrapper">
-				<h1 class="main-header">Presentation + Layout</h1>
-				<p class="main-text">
-					The layout of your webpage is very important to how it will feel. The
-					first step is to reduce the number of actual web pages. This is
-					because scrolling is much more fluid and gives more control for
-					animation.<br /><br />The next big factor is whitespace. Notice how
-					there is always a gap between different elements such as text, it
-					really just makes everything much more visually pleasing. Just give it
-					a try it, you'll be surprised.<br /><br />Finally, you might have
-					noticed that this web page does not utilise the edges. That is because
-					it is much more visually pleasing, and it allows you to maintain the
-					size of elements throughout different aspect ratios. This just delays
-					the need for responsive design.
-				</p>
-			</div>
-		</div>
-		<div id="form" class="page"></div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="main.js"></script>
+    <title>Steps for making a good webpage</title>
+  </head>
+  <body>
+    <div id="nav">
+      <div class="nav-button"><a href="#main">Home</a></div>
+      <div class="nav-button"><a href="#comment">Comments</a></div>
+      <div class="nav-button"><a href="#table">Images</a></div>
+      <div class="nav-button"><a href="#styles">Stylesheets</a></div>
+      <div class="nav-button"><a href="#pseudo">Pseudo's</a></div>
+      <div class="nav-button"><a href="#hyperlinks">Hyperlinks</a></div>
+      <div class="nav-button"><a href="#presentation">Presentation</a></div>
+      <div class="nav-button"><a href="#form">Form</a></div>
+    </div>
+    <div id="main" class="page">
+      <div class="main-wrapper">
+        <h1 class="main-header">How to do this project in 3 easy steps</h1>
+        <p class="main-text">
+          If you just follow these simple instructions, it will all turn out
+          great!
+        </p>
+      </div>
+    </div>
+    <div id="comment" class="page">
+      <div class="main-wrapper">
+        <h1 class="main-header">Commenting your code is super important!</h1>
+        <p class="main-text">
+          Code in any language can be confusing and hard to read. This is why
+          you must comment it. You'll think that you'll remember what your code
+          does, but you won't. Plus, others can't remember for you.<br />Just
+          look at the difference!
+        </p>
+      </div>
+      <div class="code-container">
+        <div class="code-wrapper">
+          <p class="code css">
+            <span>h1.main-header::after { /* Page header underline */</span>
+            <span>/* Makes sure pseudo elements is displayed */</span>
+            <span>content: '';</span>
+            <span>display: block;</span>
+            <span>/* Set bar size */</span>
+            <span>position: absolute;</span>
+            <span>width: 60px;</span>
+            <span>height: 5px;</span>
+            <span>/* Position bar */</span>
+            <span>left: 50%;</span>
+            <span>transform: translateX(-50%);</span>
+            <span>/* Style bar */</span>
+            <span>
+              transition: width 0.5s; /* Add transition to pseudo elements
+              because * doesnt affect them */
+            </span>
+            <span>background-color: black;</span>
+            <span>}</span>
+          </p>
+        </div>
+        <div class="code-wrapper">
+          <p class="code css">
+            <span>h1.main-header::after {</span>
+            <span>content: '';</span>
+            <span>display: block;</span>
+            <span>position: absolute;</span>
+            <span>width: 60px;</span>
+            <span>height: 5px;</span>
+            <span>left: 50%;</span>
+            <span>transform: translateX(-50%);</span>
+            <span>transition: width 0.5s; </span>
+            <span>background-color: black;</span>
+            <span>}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="table" class="page">
+      <div class="main-wrapper">
+        <h1 class="main-header">Use images and tables</h1>
+        <p class="main-text">
+          Images and tables can add a lot to a website. They are a great way to
+          convey a message in a simple way.
+        </p>
+      </div>
+      <div class="content">
+        <table>
+          <tr>
+            <th class="no-border"></th>
+            <th>0</th>
+            <th>1</th>
+          </tr>
+          <tr>
+            <th>0</th>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th>1</th>
+            <td>1</td>
+            <td>0</td>
+          </tr>
+        </table>
+        <img id="html5logo" src="img/html.svg" alt="img no load ;(" />
+      </div>
+    </div>
+    <div id="styles" class="page">
+      <div class="main-wrapper">
+        <h1 class="main-header">Use more classes and id's</h1>
+        <p class="main-text">
+          Classes allow you to affect multiple elements at once. Instead of
+          applying a style to many elements, just apply a class to them. Id's
+          make your
+          <a
+            class="link red"
+            href="https://www.w3schools.com/cssref/css_selectors.asp"
+            target="_blank"
+            >selectors</a
+          >
+          very simple. Instead of having a long
+          <a
+            class="link green"
+            href="https://www.w3schools.com/cssref/css_selectors.asp"
+            target="_blank"
+            >selector</a
+          >, you can just have it find the tag with that id. Just make sure you
+          leave a comment so you remember what it is.
+        </p>
+      </div>
+      <div class="code-container">
+        <div class="code-wrapper">
+          <p class="code css">
+            <span>/* This is clunky and hard to read */</span>
+            <span>div:nth-child(4) > div > h1 { /* Style header */</span>
+            <span> /* Set colour and margin */</span>
+            <span> color: black;</span>
+            <span> margin: 3vh;</span>
+            <span>}</span>
+            <span>div:nth-child(4) > div > p { /* Style text */</span>
+            <span> /* Set colour and margin */</span>
+            <span> color: black;</span>
+            <span> margin: 3vh;</span>
+            <span>}</span>
+          </p>
+        </div>
+        <div class="code-wrapper">
+          <p class="code css">
+            <span>/* This is clear and concise */</span>
+            <span>div#style h1.main-header,</span>
+            <span> div#style p.main-text { /* Style header and text */</span>
+            <span> /* Set colour and margin */</span>
+            <span> color: black;</span>
+            <span> margin: 3vh;</span>
+            <span>}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="pseudo" class="page">
+      <div class="main-wrapper">
+        <h1 class="main-header">Complex selectors and Pseudo elements</h1>
+        <p class="main-text">
+          To keep your css file(s) clean, it is really important that you use a
+          variety of techniques to consolidate your code. This could be as
+          simple as having an underline class instead of adding a bunch of
+          underlines. Pseudo elements are elements that appear, but are not
+          real. An example of this is the ::before pseudo element for the line
+          numbers below.
+        </p>
+      </div>
+      <div class="code-container">
+        <div class="code-wrapper">
+          <p class="code css">
+            <span>/* These rules are very similar */</span>
+            <span>div#table th:not(.no-border) {/* Table headers */</span>
+            <span> /* Set fg and bg colours */</span>
+            <span> border: 0.5rem solid white;</span>
+            <span> background-color: #ddd;</span>
+            <span>}</span>
+            <span>div#table td { /* Table data */</span>
+            <span> /* Set fg and bg colours */</span>
+            <span> border: 0.5rem solid white;</span>
+            <span> background-color: #ddd;</span>
+            <span> /* center text (th are auto centered) */</span>
+            <span> text-align: center;</span>
+            <span>}</span>
+          </p>
+        </div>
+        <div class="code-wrapper">
+          <p class="code css">
+            <span>/* This is much cleaner */</span>
+            <span>div#table th:not(.no-border),</span>
+            <span>div#table td { /* Table headers and data */</span>
+            <span> /* Set fg and bg colours */</span>
+            <span> border: 0.5rem solid white;</span>
+            <span> background-color: #ddd;</span>
+            <span> /* center text */</span>
+            <span> text-align: center;</span>
+            <span>}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="hyperlinks" class="page">
+      <div class="main-wrapper">
+        <h1 class="main-header">Hyperlinks are awesome!</h1>
+        <p class="main-text">
+          You have to remember, that these are websites! If someone gets
+          confused or lost, hyperlinks are a great way to send them in a
+          direction of clarification. All elements, and links especially, can
+          have effects when they are
+          <a
+            class="link green"
+            href="https://www.w3schools.com/css/css_pseudo_classes.asp"
+            target="_blank"
+            >hovered, clicked, selected, etc...</a
+          >. And best of all, they can be chained together!
+        </p>
+      </div>
+      <div class="content">
+        <h1>Links turn red</h1>
+        <a href="/" target="_blank" class="link first">First child</a>
+        <a href="/" target="_blank" class="link red">Hover</a>
+        <a href="/" target="_blank" class="link third">Third child</a>
+        <a href="/" target="_blank" class="link active">Active</a>
+        <a href="/" target="_blank" class="link visited">Visited</a>
+      </div>
+    </div>
+    <div id="presentation" class="page">
+      <div class="main-wrapper">
+        <h1 class="main-header">Presentation + Layout</h1>
+        <p class="main-text">
+          The layout of your webpage is very important to how it will feel. The
+          first step is to reduce the number of actual web pages. This is
+          because scrolling is much more fluid and gives more control for
+          animation.<br /><br />The next big factor is whitespace. Notice how
+          there is always a gap between different elements such as text, it
+          really just makes everything much more visually pleasing. Just give it
+          a try it, you'll be surprised.<br /><br />Finally, you might have
+          noticed that this web page does not utilise the edges. That is because
+          it is much more visually pleasing, and it allows you to maintain the
+          size of elements throughout different aspect ratios. This just delays
+          the need for responsive design.
+        </p>
+      </div>
+    </div>
+    <div id="form" class="page">
+      <div class="main-wrapper">
+        <h1 class="main-header">Great! Now do it right.</h1>
+        <p class="main-text">
+          Now that you understand the concepts, you have to know how to apply
+          them properly. Make sure that you're indenting your code, closing all
+          your tags, and not creating any errors.<br /><br />But how do you know
+          if you've made a mistake? Well you can use an html
+          <a href="http://validator.w3.org/" target="_blank" class="link green"
+            >validator</a
+          >! This is a neat little tool that will tell you if you have any
+          errors. If you fix all the errors and warnings then you know your code
+          is proper html5 code.<br /><br />There! That is everything you need to
+          know to get started making web pages. And finally, never be
+          discouraged because you don't know something. The point of a good
+          programmer is not know, but to be able to learn.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>
