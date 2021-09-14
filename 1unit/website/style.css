@@ -25,7 +25,7 @@ p.code > span::after {
 p.code > span {
 	counter-increment: line;
 }
-p.code span.comment {
+p.code .comment {
 	color: #777;
 }
 p.code > span::before {
@@ -47,7 +47,11 @@ span.center {
 a {
 	text-decoration: none;
 }
-div.page {
+.link {
+	text-decoration: underline;
+	color: #666;
+}
+.page {
 	width: 100%;
 	height: 100vh;
 	position: relative;
@@ -134,14 +138,13 @@ div#comment > div.wrapper {
 	top: 5vh;
 	width: max(30%, 45rem);
 }
-
 div#comment > div.code-container {
 	display: grid;
 	position: absolute;
 	bottom: 5vh;
 	left: 50%;
-	width: max(30%, 45rem);
 	transform: translateX(-50%);
+	width: max(30%, 45rem);
 }
 
 div#comment div.code-wrapper {
@@ -171,16 +174,72 @@ div#table > div.content > * {
 	grid-row: 1;
 }
 
-div.content > img#html5logo {
+div#table > div.content > img#html5logo {
 	height: 30vh;
 	display: block;
 	margin-left: auto;
-	/* margin-right: auto; */
 }
 
-div.content th:not(.no-border),
-div.content td {
+div#table > div.content th:not(.no-border),
+div#table > div.content td {
 	border: 0.5rem solid white;
 	text-align: center;
 	background-color: #ddd;
 }
+
+/* Stylesheets */
+
+div#styles > div.wrapper {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 5vh;
+	width: max(30%, 45rem);
+}
+
+div#styles > div.code-container {
+	display: grid;
+	position: absolute;
+	bottom: 5vh;
+	left: 50%;
+	transform: translateX(-50%);
+	width: max(30%, 45rem);
+}
+
+div#styles div.code-wrapper {
+	grid-row: 1;
+	margin: 10px;
+}
+
+/* <div id="styles" class="page">
+			<div class="wrapper">
+				<h1 class="main-header">Use more classes and id's</h1>
+				<p class="main-text">
+					Classes allow you to affect multiple elements at once. Instead of
+					applying a style to many elements, just apply a class to them. Id's
+					make your
+					<a
+						class="link"
+						href="https://www.w3schools.com/cssref/css_selectors.asp"
+						target="_blank"
+						>selectors</a
+					>
+					very simple. Instead of having a long
+					<a
+						class="link"
+						href="https://www.w3schools.com/cssref/css_selectors.asp"
+						target="_blank"
+						>selector</a
+					>, you can just have it find the tag with that id. Just make sure you
+					leave a comment so you remember what it is.
+				</p>
+			</div>
+			<div class="code-container">
+				<div class="code-wrapper">
+					<p class="code css"></p>
+				</div>
+				<div class="code-wrapper">
+					<p class="code css"></p>
+				</div>
+			</div>
+		</div> */

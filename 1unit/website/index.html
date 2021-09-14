@@ -105,7 +105,58 @@
 				<img id="html5logo" src="img/html.svg" alt="img no load ;(" />
 			</div>
 		</div>
-		<div id="styles" class="page"></div>
+		<div id="styles" class="page">
+			<div class="wrapper">
+				<h1 class="main-header">Use more classes and id's</h1>
+				<p class="main-text">
+					Classes allow you to affect multiple elements at once. Instead of
+					applying a style to many elements, just apply a class to them. Id's
+					make your
+					<a
+						class="link"
+						href="https://www.w3schools.com/cssref/css_selectors.asp"
+						target="_blank"
+						>selectors</a
+					>
+					very simple. Instead of having a long
+					<a
+						class="link"
+						href="https://www.w3schools.com/cssref/css_selectors.asp"
+						target="_blank"
+						>selector</a
+					>, you can just have it find the tag with that id. Just make sure you
+					leave a comment so you remember what it is.
+				</p>
+			</div>
+			<div class="code-container">
+				<div class="code-wrapper">
+					<p class="code css">
+						<span>/* This is clunky and hard to read */</span>
+						<span>div:nth-child(4) > div > h1 { /* Style header */</span>
+						<span> /* Set colour and margin */</span>
+						<span> color: black;</span>
+						<span> margin: 3vh;</span>
+						<span>}</span>
+						<span>div:nth-child(4) > div > p { /* Style text */</span>
+						<span> /* Set colour and margin */</span>
+						<span> color: black;</span>
+						<span> margin: 3vh;</span>
+						<span>}</span>
+					</p>
+				</div>
+				<div class="code-wrapper">
+					<p class="code css">
+						<span>/* This is clear and concise */</span>
+						<span>div#style h1.main-header,</span>
+						<span> div#style p.main-text { /* Style header and text */</span>
+						<span> /* Set colour and margin */</span>
+						<span> color: black;</span>
+						<span> margin: 3vh;</span>
+						<span>}</span>
+					</p>
+				</div>
+			</div>
+		</div>
 		<div id="pseudo" class="page"></div>
 		<div id="hyperlinks" class="page"></div>
 		<div id="presentation" class="page"></div>
