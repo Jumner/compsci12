@@ -211,27 +211,36 @@ div#styles div.code-wrapper {
 	margin: 10px;
 }
 
-/* <div id="styles" class="page">
+/* Pseudo's */
+
+div#pseudo > div.wrapper {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 5vh;
+	width: max(30%, 45rem);
+}
+
+div#pseudo > div.code-container {
+	display: grid;
+	position: absolute;
+	bottom: 5vh;
+	left: 50%;
+	transform: translateX(-50%);
+	width: max(30%, 45rem);
+}
+
+div#pseudo div.code-wrapper {
+	grid-row: 1;
+	margin: 10px;
+}
+
+/* <div id="pseudo" class="page">
 			<div class="wrapper">
-				<h1 class="main-header">Use more classes and id's</h1>
+				<h1 class="main-header">Complex selectors and Pseudo elements</h1>
 				<p class="main-text">
-					Classes allow you to affect multiple elements at once. Instead of
-					applying a style to many elements, just apply a class to them. Id's
-					make your
-					<a
-						class="link"
-						href="https://www.w3schools.com/cssref/css_selectors.asp"
-						target="_blank"
-						>selectors</a
-					>
-					very simple. Instead of having a long
-					<a
-						class="link"
-						href="https://www.w3schools.com/cssref/css_selectors.asp"
-						target="_blank"
-						>selector</a
-					>, you can just have it find the tag with that id. Just make sure you
-					leave a comment so you remember what it is.
+					To keep your css file(s) clean, it is really important that you use a
+					variety of techniques to consolidate your css code.
 				</p>
 			</div>
 			<div class="code-container">

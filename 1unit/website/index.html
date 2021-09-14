@@ -157,7 +157,47 @@
 				</div>
 			</div>
 		</div>
-		<div id="pseudo" class="page"></div>
+		<div id="pseudo" class="page">
+			<div class="wrapper">
+				<h1 class="main-header">Complex selectors and Pseudo elements</h1>
+				<p class="main-text">
+					To keep your css file(s) clean, it is really important that you use a
+					variety of techniques to consolidate your code. This could be as
+					simple as having an underline class instead of adding a bunch of
+					underlines. Pseudo elements are elements that appear, but are not
+					real. An example of this is the ::before pseudo element for the line
+					numbers below. Or, the ::after pseudo element for underlines that grow
+					when you hover them.
+				</p>
+			</div>
+			<div class="code-container">
+				<div class="code-wrapper">
+					<p class="code css">
+						<span>div#table th:not(.no-border) {/* Table headers */</span>
+						<span> /* Set fg and bg colours */</span>
+						<span> border: 0.5rem solid white;</span>
+						<span> background-color: #ddd;</span>
+						<span>}</span>
+						<span>div#table td { /* Table data */</span>
+						<span> /* center text (th are auto centered) */</span>
+						<span> text-align: center;</span>
+						<span>}</span>
+					</p>
+				</div>
+				<div class="code-wrapper">
+					<p class="code css">
+						<span>div#table th:not(.no-border),</span>
+						<span>div#table td { /* Table headers and data */</span>
+						<span> /* Set fg and bg colours */</span>
+						<span> border: 0.5rem solid white;</span>
+						<span> background-color: #ddd;</span>
+						<span> /* center text */</span>
+						<span> text-align: center;</span>
+						<span>}</span>
+					</p>
+				</div>
+			</div>
+		</div>
 		<div id="hyperlinks" class="page"></div>
 		<div id="presentation" class="page"></div>
 		<div id="form" class="page"></div>
