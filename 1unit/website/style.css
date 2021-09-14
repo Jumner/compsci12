@@ -75,6 +75,13 @@ p.main-text {
 	margin-top: 5%;
 	font-size: 2rem;
 }
+div.main-wrapper {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 5vh;
+	width: max(30%, 45rem);
+}
 h1.main-header::after {
 	/* Page header underline */
 	/* Makes sure pseudo elements is displayed */
@@ -94,6 +101,20 @@ h1.main-header::after {
 
 h1.main-header:hover::after {
 	width: 90%;
+}
+
+div.code-container {
+	display: grid;
+	position: absolute;
+	bottom: 5vh;
+	left: 50%;
+	transform: translateX(-50%);
+	width: max(30%, 45rem);
+}
+
+div.code-wrapper {
+	grid-row: 1;
+	margin: 10px;
 }
 
 /* Nav */
@@ -132,50 +153,24 @@ div.nav-button > a:hover {
 /* Main page */
 
 div#main > div.main-wrapper {
-	position: absolute;
 	top: 50%;
 	width: max(30%, 37rem);
-	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
-/* Comments page */
-
-div#comment > div.main-wrapper {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	top: 5vh;
-	width: max(30%, 45rem);
-}
-div#comment > div.code-container {
-	display: grid;
-	position: absolute;
-	bottom: 5vh;
-	left: 50%;
-	transform: translateX(-50%);
-	width: max(30%, 45rem);
-}
-
-div#comment div.code-wrapper {
-	grid-row: 1;
-	margin: 10px;
-}
+/* Comments page (Just kidding its all css 🥳) */
 
 /* Images */
-
-div#table > div {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	width: max(30%, 45rem);
-}
 
 div#table > div.main-wrapper {
 	top: 10vh;
 }
 
 div#table > div.content {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: max(30%, 45rem);
 	bottom: 10vh;
 	display: grid;
 }
@@ -197,53 +192,9 @@ div#table > div.content td {
 	background-color: #ddd;
 }
 
-/* Stylesheets */
+/* Stylesheets (Wait, its all classes? Again? Yay 🎊) */
 
-div#styles > div.main-wrapper {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	top: 5vh;
-	width: max(30%, 45rem);
-}
-
-div#styles > div.code-container {
-	display: grid;
-	position: absolute;
-	bottom: 5vh;
-	left: 50%;
-	transform: translateX(-50%);
-	width: max(30%, 45rem);
-}
-
-div#styles div.code-wrapper {
-	grid-row: 1;
-	margin: 10px;
-}
-
-/* Pseudo's */
-
-div#pseudo > div.main-wrapper {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	top: 5vh;
-	width: max(30%, 45rem);
-}
-
-div#pseudo > div.code-container {
-	display: grid;
-	position: absolute;
-	bottom: 5vh;
-	left: 50%;
-	transform: translateX(-50%);
-	width: max(30%, 45rem);
-}
-
-div#pseudo div.code-wrapper {
-	grid-row: 1;
-	margin: 10px;
-}
+/* Pseudo's (Wait a minute, I'm starting to see a pattern here! 😉) */
 
 /* Hyperlinks */
 
@@ -283,21 +234,4 @@ div#hyperlinks div.content .link.visited:visited {
 	color: red;
 }
 
-/* Presentation */
-
-div#presentation > div.main-wrapper {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	top: 5vh;
-	width: max(30%, 45rem);
-}
-
-div#presentation > div.content {
-	display: grid;
-	position: absolute;
-	bottom: 5vh;
-	left: 50%;
-	transform: translateX(-50%);
-	width: max(30%, 45rem);
-}
+/* Presentation (You know what, I understand now 🙃)*/
