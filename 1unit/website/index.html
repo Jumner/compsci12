@@ -31,17 +31,48 @@
 				<h1 class="main-header">Commenting your code is super important!</h1>
 				<p class="main-text">
 					Code in any language can be confusing and hard to read. This is why
-					you must comment it. You may think that you will remember what your
-					code does, but you won't. Plus, others can't remember for you.<br />Just
+					you must comment it. You'll think that you'll remember what your code
+					does, but you won't. Plus, others can't remember for you.<br />Just
 					look at the difference!
 				</p>
 			</div>
 			<div class="code-container">
 				<div class="code-wrapper">
-					<p class="code"><span>test</span><span>test2</span></p>
+					<p class="code css">
+						<span>h1.main-header::after { /* Page header underline */</span>
+						<span>/* Makes sure pseudo elements is displayed */</span>
+						<span>content: '';</span>
+						<span>display: block;</span>
+						<span>/* Set bar size */</span>
+						<span>position: absolute;</span>
+						<span>width: 60px;</span>
+						<span>height: 5px;</span>
+						<span>/* Position bar */</span>
+						<span>left: 50%;</span>
+						<span>transform: translateX(-50%);</span>
+						<span>/* Style bar */</span>
+						<span>
+							transition: width 0.5s; /* Add transition to pseudo elements
+							because * doesnt affect them */
+						</span>
+						<span>background-color: black;</span>
+						<span>}</span>
+					</p>
 				</div>
 				<div class="code-wrapper">
-					<p class="code"><span>test3</span></p>
+					<p class="code css">
+						<span>h1.main-header::after {</span>
+						<span>content: '';</span>
+						<span>display: block;</span>
+						<span>position: absolute;</span>
+						<span>width: 60px;</span>
+						<span>height: 5px;</span>
+						<span>left: 50%;</span>
+						<span>transform: translateX(-50%);</span>
+						<span>transition: width 0.5s; </span>
+						<span>background-color: black;</span>
+						<span>}</span>
+					</p>
 				</div>
 			</div>
 		</div>

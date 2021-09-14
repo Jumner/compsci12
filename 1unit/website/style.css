@@ -13,6 +13,7 @@ h1 {
 }
 
 p.code {
+	tab-size: 2em;
 	color: white;
 	font-family: 'Source Code Pro';
 }
@@ -24,13 +25,14 @@ p.code > span::after {
 p.code > span {
 	counter-increment: line;
 }
+p.code span.comment {
+	color: #777;
+}
 p.code > span::before {
 	content: counter(line) '. ';
 	color: #666;
 	display: inline-block;
 	width: 2rem;
-	padding-left: auto;
-	margin-left: auto;
 	text-align: left;
 }
 div.code-wrapper {
@@ -58,13 +60,18 @@ p.main-text {
 	font-size: 2rem;
 }
 h1.main-header::after {
+	/* Page header underline */
+	/* Makes sure pseudo elements is displayed */
 	content: '';
 	display: block;
+	/* Set bar size */
 	position: absolute;
 	width: 60px;
 	height: 5px;
+	/* Position bar */
 	left: 50%;
 	transform: translateX(-50%);
+	/* Style bar */
 	transition: width 0.5s ease-in-out; /* Add transition to pseudo elements because * doesnt affect them */
 	background-color: black;
 }
@@ -129,7 +136,7 @@ div#comment > div.wrapper {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	top: 10vh;
+	top: 5vh;
 	width: max(30%, 45rem);
 }
 
@@ -144,7 +151,7 @@ div#comment p.main-text {
 div#comment > div.code-container {
 	display: grid;
 	position: absolute;
-	bottom: 15vh;
+	bottom: 5vh;
 	left: 50%;
 	width: max(30%, 45rem);
 	transform: translateX(-50%);
