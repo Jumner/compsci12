@@ -2,21 +2,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin&family=Josefin+Sans&family=Source+Code+Pro&display=swap");
 /* Cabin: main text, Josefin Sans: headers, Source Code Pro: code 😛 */
 * {
+  /* Default to all elements */
+  /* get rid of padding and margin*/
   margin: 0;
   padding: 0;
+  /* Font/transitions */
   font-family: "Cabin";
   transition: all 0.5s ease-in-out;
   scroll-behavior: smooth;
 }
 html {
+  /* Make font size responsive to viewport size */
   font-size: 1.6vh;
 }
+a {
+  /* Disable effects on links */
+  text-decoration: none;
+}
 h1 {
+  /* Set header font */
   font-family: "Josefin Sans";
 }
-
 p.code {
-  tab-size: 2em;
+  /* Code box */
+  /* Set colour and font */
   color: white;
   font-family: "Source Code Pro";
 }
@@ -26,64 +35,88 @@ p.code > span::after {
   white-space: pre;
 }
 p.code > span {
+  /* Increment the line counter */
   counter-increment: line;
 }
 p.code .comment {
+  /* Set the code comment colour */
   color: #777;
 }
 p.code > span::before {
+  /* Put the line number before each line */
+  /* Set colour, content, and alignment */
   content: counter(line) ". ";
   color: #666;
+  text-align: left;
+  /* Set size and display */
   display: inline-block;
   width: 2rem;
-  text-align: left;
 }
 div.code-wrapper {
+  /* Style the actual code box */
+  /* Set colour, padding, and edge curves */
   background-color: black;
   padding: 1rem;
   border-radius: 10px;
 }
-
-span.center {
-  text-align: center;
-}
-a {
-  text-decoration: none;
+div.page > div.content {
+  /* Image and table container */
+  /* Horizontally center and set width */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max(30%, 45rem);
+  /* Lock to bottom */
+  bottom: 10vh;
+  /* Make a grid */
+  display: grid;
 }
 .link {
+  /* Set link underline and colour */
   text-decoration: underline;
   color: #666;
 }
 .link:hover {
+  /* Make the underline waver on hover */
   text-decoration: underline wavy;
 }
+/* These two define classes for hover colours */
 .link.red:hover {
   color: crimson;
 }
-
 .link.green:hover {
   color: darkcyan;
 }
+/* Each page */
 .page {
+  /* Set width and height to screen size and position relative */
   width: 100%;
   height: 100vh;
   position: relative;
 }
+div.main-wrapper {
+  /* Contains the main h1 and p */
+  /* Position absolute to page */
+  position: absolute;
+  /* Horizontally center in the page */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Position to top of page and make width responsive */
+  top: 5vh;
+  width: max(30%, 45rem);
+}
 h1.main-header {
+  /* Style the big header text */
+  /* Give it top margin, center, and set font size */
   margin-top: 3vh;
   text-align: center;
   font-size: 3.5rem;
 }
 p.main-text {
+  /* Style the smaller main text */
+  /* Give it some top margin, and set font size */
   margin-top: 5%;
   font-size: 2rem;
-}
-div.main-wrapper {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 5vh;
-  width: max(30%, 45rem);
 }
 h1.main-header::after {
   /* Page header underline */
@@ -94,28 +127,32 @@ h1.main-header::after {
   position: absolute;
   width: 60px;
   height: 5px;
-  /* Position bar */
+  /* Center bar horizontally */
   left: 50%;
   transform: translateX(-50%);
   /* Style bar */
   transition: width 0.5s ease-in-out; /* Add transition to pseudo elements because * doesnt affect them */
   background-color: black;
 }
-
 h1.main-header:hover::after {
+  /* Make underline bigger on hover */
   width: 90%;
 }
-
 div.code-container {
+  /* Contains code wrappers */
+  /* Position as grid absolute to the body */
   display: grid;
   position: absolute;
-  bottom: 5vh;
+  /* Center and lock to bottom */
+  bottom: 10vh;
   left: 50%;
   transform: translateX(-50%);
+  /* Set width responsively */
   width: max(30%, 45rem);
 }
-
-div.code-wrapper {
+div.code-container > div.code-wrapper {
+  /* Contains the code */
+  /* Put all of them horizontally in the container with some margin */
   grid-row: 1;
   margin: 10px;
 }
@@ -123,23 +160,30 @@ div.code-wrapper {
 /* Nav */
 
 div#nav {
+  /* The top nav bar */
+  /* Set colour and position */
   background-color: black;
   color: white;
   position: fixed;
   width: 100%;
+  /* Set height responsively and z-index */
   height: min(max(5vh, 30px), 50px);
   z-index: 10;
 }
 
 div#nav > div.nav-button {
+  /* Position each nav button */
   width: 100vw; /* This doesn't apply but is still needed */
   display: table-cell;
 }
 
 div.nav-button > a {
+  /* Style each nav button link */
+  /* Center */
   align-items: center;
   justify-content: center;
   display: flex;
+  /* Style, and set size and positioning */
   height: 100%;
   width: calc(100% / 8);
   position: absolute;
@@ -147,8 +191,9 @@ div.nav-button > a {
 }
 
 div.nav-button > a:hover {
+  /* Hover of nav button */
+  /* Style and create box shadow */
   text-decoration: underline;
-  box-shadow: 10px;
   box-shadow: inset 0 calc(50px) 0 0 white;
   color: black;
 }
@@ -156,6 +201,7 @@ div.nav-button > a:hover {
 /* Main page */
 
 div#main > div.main-wrapper {
+  /* Vertically center, with modified width */
   top: 50%;
   width: max(30%, 37rem);
   transform: translate(-50%, -50%);
@@ -165,32 +211,24 @@ div#main > div.main-wrapper {
 
 /* Images */
 
-div#table > div.main-wrapper {
-  top: 10vh;
-}
-
-div#table > div.content {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max(30%, 45rem);
-  bottom: 10vh;
-  display: grid;
-}
-
 div#table > div.content > * {
+  /* Make table and img side by side */
   grid-row: 1;
 }
 
 div#table > div.content > img#html5logo {
+  /* Set logo size */
   height: 30vh;
   display: block;
+  /* Push to the right */
   margin-left: auto;
 }
 
 div#table > div.content th:not(.no-border),
 div#table > div.content td {
+  /* Thicken border */
   border: 0.5rem solid white;
+  /* Add background and center */
   text-align: center;
   background-color: #ddd;
 }
@@ -201,35 +239,23 @@ div#table > div.content td {
 
 /* Hyperlinks */
 
-div#hyperlinks > div.main-wrapper {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 5vh;
-  width: max(30%, 45rem);
-}
-
-div#hyperlinks > div.content {
-  display: grid;
-  position: absolute;
-  bottom: 5vh;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max(30%, 45rem);
-}
-
 div#hyperlinks .link {
+  /* Link links lol */
+  /* Set size, center, and make side by side */
   font-size: 1.5rem;
   text-align: center;
   grid-row: 2;
 }
 
 div#hyperlinks > div.content > h1 {
+  /* Content header */
+  /* Center, position, and add margin */
   text-align: center;
   grid-column: 1 / span 5;
   margin: 1rem;
 }
 
+/* Styles to make links red */
 div#hyperlinks div.content .link:first-of-type,
 div#hyperlinks div.content .link.third:nth-of-type(3),
 div#hyperlinks div.content .link.active:active,
