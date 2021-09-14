@@ -51,6 +51,16 @@ a {
 	text-decoration: underline;
 	color: #666;
 }
+.link:hover {
+	text-decoration: underline wavy;
+}
+.link.red:hover {
+	color: crimson;
+}
+
+.link.green:hover {
+	color: darkcyan;
+}
 .page {
 	width: 100%;
 	height: 100vh;
@@ -235,20 +245,40 @@ div#pseudo div.code-wrapper {
 	margin: 10px;
 }
 
-/* <div id="pseudo" class="page">
-			<div class="wrapper">
-				<h1 class="main-header">Complex selectors and Pseudo elements</h1>
-				<p class="main-text">
-					To keep your css file(s) clean, it is really important that you use a
-					variety of techniques to consolidate your css code.
-				</p>
-			</div>
-			<div class="code-container">
-				<div class="code-wrapper">
-					<p class="code css"></p>
-				</div>
-				<div class="code-wrapper">
-					<p class="code css"></p>
-				</div>
-			</div>
-		</div> */
+/* Hyperlinks */
+
+div#hyperlinks > div.wrapper {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 5vh;
+	width: max(30%, 45rem);
+}
+
+div#hyperlinks > div.content {
+	display: grid;
+	position: absolute;
+	bottom: 5vh;
+	left: 50%;
+	transform: translateX(-50%);
+	width: max(30%, 45rem);
+}
+
+div#hyperlinks .link {
+	font-size: 1.5rem;
+	text-align: center;
+	grid-row: 2;
+}
+
+div#hyperlinks > div.content > h1 {
+	text-align: center;
+	grid-column: 1 / span 5;
+	margin: 1rem;
+}
+
+div#hyperlinks div.content .link:first-of-type,
+div#hyperlinks div.content .link.third:nth-of-type(3),
+div#hyperlinks div.content .link.active:active,
+div#hyperlinks div.content .link.visited:visited {
+	color: red;
+}
