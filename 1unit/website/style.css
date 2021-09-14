@@ -53,10 +53,12 @@ div.page {
 	position: relative;
 }
 h1.main-header {
+	margin-top: 3vh;
 	text-align: center;
 	font-size: 3.5rem;
 }
 p.main-text {
+	margin-top: 5%;
 	font-size: 2rem;
 }
 h1.main-header::after {
@@ -122,13 +124,6 @@ div#main > div.wrapper {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-div#main h1.main-header {
-	margin-top: 3vh;
-}
-
-div#main p.main-text {
-	margin-top: 5%;
-}
 
 /* Comments page */
 
@@ -138,14 +133,6 @@ div#comment > div.wrapper {
 	transform: translateX(-50%);
 	top: 5vh;
 	width: max(30%, 45rem);
-}
-
-div#comment h1.main-header {
-	margin-top: 3vh;
-}
-
-div#comment p.main-text {
-	margin-top: 5%;
 }
 
 div#comment > div.code-container {
@@ -162,11 +149,38 @@ div#comment div.code-wrapper {
 	margin: 10px;
 }
 
-/* <div class="code-container">
-				<div class="code-wrapper">
-					<p class="code">test</p>
-				</div>
-				<div class="code-wrapper">
-					<p class="code">test</p>
-				</div>
-			</div> */
+/* Images */
+
+div#table > div {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: max(30%, 45rem);
+}
+
+div#table > div.wrapper {
+	top: 10vh;
+}
+
+div#table > div.content {
+	bottom: 10vh;
+	display: grid;
+}
+
+div#table > div.content > * {
+	grid-row: 1;
+}
+
+div.content > img#html5logo {
+	height: 30vh;
+	display: block;
+	margin-left: auto;
+	/* margin-right: auto; */
+}
+
+div.content th:not(.no-border),
+div.content td {
+	border: 0.5rem solid white;
+	text-align: center;
+	background-color: #ddd;
+}
