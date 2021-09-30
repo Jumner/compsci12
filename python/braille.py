@@ -44,7 +44,7 @@ brailleDict = {
 	'xxoxxx':'y',
 	'xooxxx':'z'
 }
-braille = parse_braille_file('data2.txt')
+braille = parse_braille_file('data.txt')
 def decode_phrase(some_braille, braille_dict):
 	phrase = ''
 	for letter in some_braille:
