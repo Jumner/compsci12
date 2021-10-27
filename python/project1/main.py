@@ -2,12 +2,18 @@
 import csv, glob
 data = {}
 
+def check_key(line, key):
+	return key in line and len(line[key]) > 0
+
+
 def verify_region(line): # Find the region of the data and make sure it exists
-	if 'Province' in line: # Look by province
+	if check_key(line, 'Province'): # Look by province
 		region = line['Province']
-	elif 'Country_Region' in line: # Otherwise look by country
+	elif check_key(line, 'Province_State'):
+		region = line['Province_State']
+	elif check_key(line, 'Country_Region'): # Otherwise look by country
 		region = line['Country_Region']
-	elif 'Country/Region' in line: # Sometimes it uses this key 🤷
+	elif check_key(line, 'Country/Region'): # Sometimes it uses this key 🤷
 		region = line['Country/Region']
 	if region not in data: # Check if region exists in data structure
 		data[region] = {} # Make sure it exists
@@ -21,7 +27,7 @@ def create_datapoint(line, label, data_label, date): # Create the datapoint
 		data[region][label].append((date, round(float(line[data_label])))) # Append the value to it
 
 files = glob.glob('data/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports/*.csv') # I love glob
-# files = glob.glob('data/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports/*1-2020.csv') # for testing
+# files = glob.glob('data/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports/*1-2020.csv') # for fewer files for testing
 # Grab all needed files
 for file_name in files: # Iterate through files
 	with open(file_name, 'r') as file: # Open date file
@@ -34,7 +40,11 @@ for file_name in files: # Iterate through files
 	print(f'{file_name} proccessed') # This file is done
 print('Case data processed') # All files done
 
-# print(data['Canada']['current_cases']) # Just so you see better how it works
-print(data) # Print it out
-for region in data: # Print out all the regions
-	print(region)
+print(data['Ontario']) # Print out whats in ontario
+print('\n\n')
+print(data['Ontario']['cases']) # Then print out whats in ontarios cases
+print('\n\n')
+print(data['Ontario']['cases'][0]) # Then print the first data point
+
+# for region in data: # Print out all the different regions
+# 	print(region)
