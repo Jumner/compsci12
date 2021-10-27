@@ -23,24 +23,13 @@ def create_datapoint(line, label, data_label, date): # Create the datapoint
 		data[country][label][date] += round(float(line[data_label])) # Add the value to it
 		# This line just makes sure that different regions of the same country are summed
 
-def mdy_to_ymd(date): # Convert date to the same as other dataset
-	date_list = date.split('-') # Split it => ['05','24','2021]
-	new_date = '-'.join([date_list[2], date_list[0], date_list[1]]) # Rearange and join
-	return new_date # Return the date
-
-with open('data/country_vaccinations.csv', 'r') as file: # Open vaccine dataset
-	for line in csv.DictReader(file): # Iterate through file
-		date = line['date'] # Get date
-		create_datapoint(line, 'vaccinations', 'total_vaccinations', date) # Create the datapoints
-		create_datapoint(line, 'daily_vaccinations', 'daily_vaccinations', date)
-
 print('Vaccination data processed') # This file is done
 
 files = glob.glob('data/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports/*.csv')
 # Grab all needed files
 for file_name in files: # Iterate through files
 	with open(file_name, 'r') as file: # Open date file
-		date = mdy_to_ymd(file_name.split('/')[-1].split('.')[0]) # Get date (Each file is one day)
+		date = file_name.split('/')[-1].split('.')[0] # Get date (Each file is one day) Also regex would be really nice here
 		for line in csv.DictReader(file): # Iterate through file
 			create_datapoint(line, 'cases', 'Confirmed' ,date) # Create datapoints
 			create_datapoint(line, 'current_cases', 'Active', date)
