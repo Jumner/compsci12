@@ -1,5 +1,5 @@
+# Data: https://github.com/CSSEGISandData/COVID-19
 import csv, glob
-# https://github.com/CSSEGISandData/COVID-19
 data = {}
 
 def verify_country(line): # Find the country of the data and make sure it exists
@@ -17,15 +17,13 @@ def create_datapoint(line, label, data_label, date): # Create the datapoint
 	country = verify_country(line) # Grab the country
 	if data_label in line and line[data_label]: # If line has data and data exists
 		if label not in data[country]: # Check if the label exists for that country
-			data[country][label] = {} # Make sure it exists
-		if date not in data[country][label]: # If date doesn't exist in this label
-			data[country][label][date] = 0 # Set it to 0
-		data[country][label][date] += round(float(line[data_label])) # Add the value to it
+			data[country][label] = [] # Make sure it exists
+		data[country][label].append((date, round(float(line[data_label])))) # Add the value to it
 		# This line just makes sure that different regions of the same country are summed
 
 print('Vaccination data processed') # This file is done
 
-files = glob.glob('data/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports/*.csv')
+files = glob.glob('data/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports/*.csv') # I love glob
 # Grab all needed files
 for file_name in files: # Iterate through files
 	with open(file_name, 'r') as file: # Open date file
@@ -38,5 +36,5 @@ for file_name in files: # Iterate through files
 	print(f'{file_name} proccessed') # This file is done
 print('Case data processed') # All files done
 
-# print(data['Canada']['current_cases'])
+# print(data['Canada']['current_cases']) # Just so you see better how it works
 print(data) # Print it out
